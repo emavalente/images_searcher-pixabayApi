@@ -61,8 +61,8 @@ async function searchPictures() {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    totalPages = pageCalculator(response.totalHits);
-      showPictures(response.hits);
+    totalPages = pageCalculator(result.totalHits);
+      showPictures(result.hits);
   } catch {
     console.log(error)
   }
